@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>داشبورد | همالایف</title>
+
+    <!-- فونت وزیر متن -->
+    <!-- فونت وزیرمتن -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- استایل داشبورد -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <div class="shell">
+
+        <!-- چک باکس نامریی : وضعیت باز و بسته بودن -->
+        <input type="checkbox" class="sidebar-input" id="sidebar-toggle">
+
+        <!-- منوی کناری -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo">
+                <img src="../images/logo-1.png" alt="همالایف">
+            </a>
+            <div class="nav">
+
+                <div class="group">
+                    <p class="group-title">منوی اصلی</p>
+                    <a href="index.html" class="link current">نمای کلی</a>
+                    <a href="product.html" class="link">محصولات</a>
+                    <a href="order.html" class="link">سفارش ها</a>
+                    <a href="customer.html" class="link">مشتریان</a>
+                    <a href="reports.html" class="link">گزارش ها</a>
+                </div>
+
+                <div class="group">
+                    <p class="group-title"> بازاریابی و ارتباط</p>
+                    <a href="coupons.html" class="link current"> کدهای تخفیف</a>
+                    <a href="messages.html" class="link">پیام ها</a>
+                    <a href="reviews.html" class="link"> نظرات</a>
+                </div>
+
+                <div class="group">
+                    <p class="group-title"> فروشگاه</p>
+                    <a href="index.html" class="link current"> اطلاعات فروشگاه</a>
+                    <a href="product.html" class="link">تنظیمات</a>
+                    <a href="order.html" class="link"> خروج</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- پرده ی تیره ، با کلیک روش ،منو بسته میشه -->
+        <label for="sidebar-toggle" class="overlay"></label>
+
+        <!-- صفحه -->
+        <div class="page">
+            <!-- نوار بالا -->
+
+            <header class="topbar">
+                <label for="sidebar-toggle" class="menu-button" aria-label="باز کردن منو">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <input type="search" class="input search" placeholder="جست و جو در محصولات ، سفارش ها و مشتریان" aria-label="جستجو">
+                <div class="actions">
+                    <a href="../index.html" class="site-link">مشاهده ی سایت</a>
+                    <a href="#" class="notice">اعلان ها<span class="count">3</span></a>
+                    <div class="user"><span class="avatar">م</span></div>
+                </div>
+            </header>
+            <!--محتوا -->
+            <main class="content">
+                <!-- عنوان صفحه -->
+
+                <div class="head">
+                    <div>
+                        <h1 class="title">نمای کلی</h1>
+                        <p class="data">چهارشنبه 4 آذر 1405</p>
+                    </div>
+                    <a href="product-form.html" class="button">افزودن محصول</a>
+                </div>
+                <!-- چهار کارت آمار -->
+                <div class="stats">
+                    <div class="stat">
+                        <p class="caption">فروش امروز</p>
+                        <p class="value">24,500,000</p>
+                        <p class="change">12% بیشتر از دیروز</p>
+                    </div>
+                    <div class="stat">
+                        <p class="caption"> سفارش های جدید</p>
+                        <p class="value">18</p>
+                        <p class="change">4 سفارش بیشتر از دیروز</p>
+                    </div>
+                    <div class="stat">
+                        <p class="caption">مشتریان جدید</p>
+                        <p class="value">7</p>
+                        <p class="change">2 نفر کمتر از دیروز</p>
+                    </div>
+                    <div class="stat">
+                        <p class="caption">محصولات کم موجودی</p>
+                        <p class="value">5</p>
+                        <p class="change">نیاز به تامین</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

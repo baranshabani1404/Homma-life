@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ثبت نام | لوازم خانگی</title>
+
+  <!-- فونت وزیرمتن -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- استایل‌ها -->
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<!-- هدر -->
+<header class="header">
+  <div class="container">
+
+    <!-- لوگو -->
+    <a class="logo" href="../index.html">
+      <img src="../images/logo-1.png" alt="هما لایف">
+    </a>
+
+    <!-- چک‌باکس نامرئی: وضعیت باز یا بسته بودن منو رو نگه می‌داره -->
+    <input class="toggle-input" type="checkbox" id="menu-toggle">
+
+    <!-- دکمه‌ی همبرگری: فقط توی تبلت و موبایل دیده می‌شه -->
+    <label class="toggle" for="menu-toggle" aria-label="باز و بسته کردن منو">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- پنل: منو و لینک‌ها -->
+    <div class="panel">
+
+      <!-- منوی اصلی -->
+      <ul class="menu">
+        <li class="item"><a class="link" href="../index.html">خانه</a></li>
+
+        <li class="item drop">
+          <a class="link" href="products.html">محصولات</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="products.html">جاروبرقی</a></li>
+            <li><a class="sublink" href="products.html">یخچال و فریزر</a></li>
+            <li><a class="sublink" href="products.html">ماشین لباسشویی</a></li>
+            <li><a class="sublink" href="products.html">ماشین ظرفشویی</a></li>
+            <li><a class="sublink" href="products.html">قهوه‌ساز</a></li>
+            <li><a class="sublink" href="products.html">سرخ‌کن و لوازم آشپزی</a></li>
+          </ul>
+        </li>
+
+        <li class="item drop">
+          <a class="link" href="brands.html">برندها</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="brands.html">بوش</a></li>
+            <li><a class="sublink" href="brands.html">سامسونگ</a></li>
+            <li><a class="sublink" href="brands.html">اسمگ</a></li>
+            <li><a class="sublink" href="brands.html">ال‌جی</a></li>
+            <li><a class="sublink" href="brands.html">فیلیپس</a></li>
+            <li><a class="sublink" href="brands.html">همه‌ی برندها</a></li>
+          </ul>
+        </li>
+
+        <li class="item"><a class="link" href="offers.html">پیشنهادهای ویژه</a></li>
+        <li class="item"><a class="link" href="magazine.html">مجله</a></li>
+        <li class="item"><a class="link" href="contact.html">تماس با ما</a></li>
+      </ul>
+
+      <!-- لینک‌های سمت چپ -->
+      <div class="icons">
+        <a href="#">جستجو</a>
+        <a href="login.html">ورود</a>
+        <a href="signup.html">ثبت‌نام</a>
+        <a href="#">علاقه‌مندی</a>
+        <a href="cart.html">سبد (۲)</a>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+<main>
+
+    <!-- مسیر صفحه -->
+    <section class="breadcrumb">
+      <div class="container">
+        <a href="../index.html">خانه</a>
+        <span>/</span>
+        <span>محصولات</span>
+      </div>
+    </section>
+
+    <!-- عنوان صفحه -->
+    <section class="page-title">
+      <div class="container">
+        <h1 class="title">محصولات</h1>
+        <p class="text">همه‌ی لوازم خانگی برقی و آشپزخانه، از برندهای معتبر.</p>
+      </div>
+    </section>
+
+    <!-- فیلتر و لیست محصولات -->
+    <section class="catalog">
+      <div class="container">
+
+        <!-- چک‌باکس نامرئی: وضعیت باز یا بسته بودن فیلتر (توی تبلت و موبایل) -->
+        <input class="filter-input" type="checkbox" id="filter-toggle">
+
+        <!-- ستون راست: فیلتر -->
+        <form class="filters" action="#">
+
+          <div class="group">
+            <h3 class="title">دسته‌بندی</h3>
+            <label class="check"><input type="checkbox"><span>یخچال و فریزر</span></label>
+            <label class="check"><input type="checkbox"><span>ماشین لباسشویی</span></label>
+            <label class="check"><input type="checkbox"><span>ماشین ظرفشویی</span></label>
+            <label class="check"><input type="checkbox"><span>جاروبرقی</span></label>
+            <label class="check"><input type="checkbox"><span>قهوه‌ساز</span></label>
+            <label class="check"><input type="checkbox"><span>ظروف آشپزی</span></label>
+          </div>
+
+          <div class="group">
+            <h3 class="title">برند</h3>
+            <label class="check"><input type="checkbox"><span>بوش</span></label>
+            <label class="check"><input type="checkbox"><span>سامسونگ</span></label>
+            <label class="check"><input type="checkbox"><span>اسمگ</span></label>
+            <label class="check"><input type="checkbox"><span>ال‌جی</span></label>
+            <label class="check"><input type="checkbox"><span>فیلیپس</span></label>
+          </div>
+
+          <div class="group">
+            <h3 class="title">قیمت (تومان)</h3>
+            <div class="range">
+              <input class="input" type="text" placeholder="از">
+              <input class="input" type="text" placeholder="تا">
+            </div>
+          </div>
+
+          <button class="button" type="submit">اعمال فیلتر</button>
+        </form>
+
+        <!-- ستون چپ: نوار بالا، محصولات و صفحه‌بندی -->
+        <div class="content">
+
+          <div class="toolbar">
+            <p class="count">۹ محصول</p>
+            <label class="filter-button" for="filter-toggle">فیلتر</label>
+            <select class="input sort">
+              <option>جدیدترین</option>
+              <option>ارزان‌ترین</option>
+              <option>گران‌ترین</option>
+              <option>پرفروش‌ترین</option>
+            </select>
+          </div>
+
+          <div class="list">
+
+            <a class="card" href="product.html">
+              <span class="badge">۱۰٪</span>
+              <div class="image"><img src="../images/products/p1.png" alt="ماشین لباسشویی بوش"></div>
+              <p class="brand">بوش</p>
+              <h3 class="name">ماشین لباسشویی بوش ۹ کیلویی</h3>
+              <p class="price">۳۲,۵۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <div class="image"><img src="../images/products/p2.png" alt="یخچال سامسونگ"></div>
+              <p class="brand">سامسونگ</p>
+              <h3 class="name">یخچال فریزر سامسونگ ساید بای ساید</h3>
+              <p class="price">۷۸,۹۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <span class="badge">۱۵٪</span>
+              <div class="image"><img src="../images/products/p3.png" alt="کتری اسمگ"></div>
+              <p class="brand">اسمگ</p>
+              <h3 class="name">کتری برقی اسمگ</h3>
+              <p class="price">۹,۸۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <div class="image"><img src="../images/products/p4.png" alt="توستر اسمگ"></div>
+              <p class="brand">اسمگ</p>
+              <h3 class="name">توستر دو شیار اسمگ</h3>
+              <p class="price">۸,۴۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <div class="image"><img src="../images/products/p5.png" alt="ماشین ظرفشویی بوش"></div>
+              <p class="brand">بوش</p>
+              <h3 class="name">ماشین ظرفشویی بوش ۱۴ نفره</h3>
+              <p class="price">۴۵,۲۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <div class="image"><img src="../images/products/p6.png" alt="جاروبرقی سامسونگ"></div>
+              <p class="brand">سامسونگ</p>
+              <h3 class="name">جاروبرقی سامسونگ</h3>
+              <p class="price">۱۲,۶۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <span class="badge">۲۰٪</span>
+              <div class="image"><img src="../images/products/p7.png" alt="اسپرسوساز فیلیپس"></div>
+              <p class="brand">فیلیپس</p>
+              <h3 class="name">اسپرسوساز فیلیپس</h3>
+              <p class="price">۱۶,۹۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <div class="image"><img src="../images/products/p8.png" alt="لباسشویی ال‌جی"></div>
+              <p class="brand">ال‌جی</p>
+              <h3 class="name">ماشین لباسشویی ال‌جی ۸ کیلویی</h3>
+              <p class="price">۲۹,۸۰۰,۰۰۰ تومان</p>
+            </a>
+
+            <a class="card" href="product.html">
+              <div class="image"><img src="../images/products/p9.png" alt="ست قابلمه استیل"></div>
+              <p class="brand">هما</p>
+              <h3 class="name">ست قابلمه استیل ۶ تکه</h3>
+              <p class="price">۴,۲۰۰,۰۰۰ تومان</p>
+            </a>
+
+          </div>
+
+          <!-- صفحه‌بندی -->
+          <nav class="pager">
+            <a class="link current" href="#">۱</a>
+            <a class="link" href="#">۲</a>
+            <a class="link" href="#">۳</a>
+            <a class="link" href="#">›</a>
+          </nav>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+    <!-- مزیت‌ها -->
+    <section class="perks">
+        <div class="container">
+          <div class="list">
+            <div class="item">
+              <h3 class="title">ارسال سریع</h3>
+              <p class="text">ارسال به سراسر کشور</p>
+            </div>
+            <div class="item">
+              <h3 class="title">ضمانت اصالت</h3>
+              <p class="text">کالای اورجینال و گارانتی‌دار</p>
+            </div>
+            <div class="item">
+              <h3 class="title">پشتیبانی</h3>
+              <p class="text">همه روزه پاسخگوی شما</p>
+            </div>
+            <div class="item">
+              <h3 class="title">بازگشت کالا</h3>
+              <p class="text">تا هفت روز فرصت دارید</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    </main>
+    <!-- فوتر -->
+  
+    <footer class="footer">
+      <div class="container">
+          <span class="copy">© همه ی حقوق همالایف ، محفوظ است .</span>
+          <div class="links">
+              <a href="pages/contact.html">تماس با ما</a>
+              <a href="pages/magazine.html">مجله</a>
+              <a href="pages/brands.html">برندها</a>
+          </div>
+      </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+@use "../base/variables" as *;
+
+// مسیر صفحه
+.breadcrumb {
+  padding: $space-3 0 $space-1;
+  font-size: $font-normal;
+  color: $color-muted;
+
+  .container {
+    display: flex;
+    gap: $space-1;                         // ۸ پیکسل بین کلمه‌ها
+  }
+
+  a:hover {
+    color: $color-accent;
+  }
+}

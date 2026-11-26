@@ -1,0 +1,36 @@
+@use "../base/variables" as *;
+
+// مزیت‌های فروشگاه
+.perks {
+  padding: $space-3 0;
+  border-top: 1px solid $color-line;
+
+  // چهار مزیت کنار هم
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-3;
+  }
+
+  .item {
+    display: grid;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: $font-normal;
+    font-weight: 500;
+  }
+
+  .text {
+    font-size: 13px;
+    color: $color-muted;
+  }
+
+  @media (max-width: $bp-mobile) {
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

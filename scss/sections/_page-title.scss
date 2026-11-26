@@ -1,0 +1,23 @@
+@use "../base/variables" as *;
+
+// عنوان صفحه‌های داخلی
+.page-title {
+  padding-bottom: $space-4;
+
+  .title {
+    font-size: $font-big;                  // ۳۶ پیکسل
+    font-weight: bold;
+  }
+
+  .text {
+    margin-top: $space-1;
+    font-size: $font-normal;
+    color: $color-muted;
+  }
+
+  @media (max-width: $bp-mobile) {
+    .title {
+      font-size: 28px;
+    }
+  }
+}

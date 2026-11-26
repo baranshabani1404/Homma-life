@@ -1,0 +1,19 @@
+@use "base/variables" as *;
+// اجزای مشترک(همون هایی که سایت استفاده می کنه )
+@use "base/reset";
+@use "base/forms";
+
+// بخش های داشبورد
+@use "dashboard/shell";
+@use "dashboard/overviwe";
+@use "dashboard/table";
+
+// استایل کل صفحه ی داشبورد
+body{
+    background: $color-bg;
+    color: $color-text;
+    font-family: $font-main;
+    font-size: $font-normal;
+    direction: rtl;
+ 
+}

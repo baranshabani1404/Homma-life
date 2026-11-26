@@ -1,0 +1,45 @@
+// متغیرها
+@use "base/variables" as *;
+
+// ریست استایل پیش‌فرض مرورگر
+@use "base/reset";
+
+// کادر و دکمه‌ی مشترک
+@use "base/forms";
+
+// بخش‌های مشترک همه‌ی صفحه‌ها
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+
+// بخش‌های صفحه‌ی اصلی
+@use "sections/hero";
+@use "sections/categories";
+@use "sections/showcase";
+@use "sections/bestsellers";
+@use "sections/perks";
+@use "sections/catalog";
+@use "sections/product";
+@use "sections/specs";
+@use "sections/similar";
+@use "sections/basket";
+@use "sections/offers";
+@use "sections/brands";
+@use "sections/magazine";
+
+// صفحه‌ی تماس با ما
+@use "sections/breadcrumb";
+@use "sections/page-title";
+@use "sections/contact";
+
+// صفحه‌های ورود و ثبت‌نام
+@use "sections/auth";
+
+// استایل کل صفحه
+body {
+  background: $color-bg;            // سفید
+  color: $color-text;               // نوشته‌های تیره
+  font-family: $font-main;          // فونت اصلی
+  font-size: $font-normal;          // ۱۶ پیکسل
+  direction: rtl;                   // راست‌چین
+}

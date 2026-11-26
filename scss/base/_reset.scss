@@ -1,0 +1,38 @@
+// همه‌ی جعبه‌ها: فاصله‌ی داخلی از عرض کم بشه
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// فاصله‌های پیش‌فرض مرورگر برداشته می‌شن
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;                 // نقطه‌ی کنار فهرست برداشته می‌شه
+}
+
+img {
+  display: block;                   // فاصله‌ی اضافه‌ی زیر عکس از بین می‌ره
+  max-width: 100%;                  // عکس از جعبه‌اش بیرون نمی‌زنه
+}
+
+a {
+  color: inherit;                   // رنگ لینک از اطرافش می‌آد
+  text-decoration: none;            // خط زیر لینک برداشته می‌شه
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;                    // فونت همه‌جا یکسان می‌شه
+}

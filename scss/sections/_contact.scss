@@ -1,0 +1,70 @@
+@use "../base/variables" as *;
+
+// اطلاعات تماس و فرم
+.contact {
+  padding-bottom: $space-5;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;      // راست: اطلاعات، چپ: فرم (کمی پهن‌تر)
+    gap: $space-4;
+    align-items: start;                    // ستون‌ها هم‌قد نشن
+  }
+
+  // چهار کارت زیر هم
+  .info {
+    display: grid;
+    gap: $space-2;
+  }
+
+  // کارت: خاکستری گرم، بدون حاشیه
+  .card {
+    padding: $space-3;
+    background: $color-tile;
+    border-radius: 16px;
+  }
+
+  .card .title {
+    margin-bottom: $space-1;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card .text {
+    font-size: $font-normal;
+  }
+
+  // فرم: فیلدها زیر هم، بدون کارت
+  .form {
+    display: grid;
+    gap: $space-2;
+  }
+
+  // ---------- ریسپانسیو ----------
+
+  // تبلت: فرم کمی پهن‌تر، فاصله کمتر
+  @media (max-width: $bp-tablet) {
+    .container {
+      grid-template-columns: 1fr 1.2fr;
+      gap: $space-2;
+    }
+  }
+
+  // موبایل: یک ستون، کارت‌ها دوتا دوتا
+  @media (max-width: $bp-mobile) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .info {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // کوچک: همه‌چیز زیر هم
+  @media (max-width: $bp-small) {
+    .info {
+      grid-template-columns: 1fr;
+    }
+  }
+}

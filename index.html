@@ -1,0 +1,246 @@
+ <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هما لایف | لوازم خانگی</title>
+
+  <!-- فونت وزیرمتن -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- استایل‌ها -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+ <!-- هدر -->
+<header class="header">
+  <div class="container">
+
+    <!-- لوگو -->
+    <a class="logo" href="index.html">
+      <img src="images/logo-1.png" alt="هما لایف">
+    </a>
+
+    <!-- چک‌باکس نامرئی: وضعیت باز یا بسته بودن منو رو نگه می‌داره -->
+    <input class="toggle-input" type="checkbox" id="menu-toggle">
+
+    <!-- دکمه‌ی همبرگری: فقط توی تبلت و موبایل دیده می‌شه -->
+    <label class="toggle" for="menu-toggle" aria-label="باز و بسته کردن منو">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- پنل: منو و لینک‌ها -->
+    <div class="panel">
+
+      <!-- منوی اصلی -->
+      <ul class="menu">
+        <li class="item"><a class="link" href="index.html">خانه</a></li>
+
+        <li class="item drop">
+          <a class="link" href="pages/products.html">محصولات</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="pages/products.html">جاروبرقی</a></li>
+            <li><a class="sublink" href="pages/products.html">یخچال و فریزر</a></li>
+            <li><a class="sublink" href="pages/products.html">ماشین لباسشویی</a></li>
+            <li><a class="sublink" href="pages/products.html">ماشین ظرفشویی</a></li>
+            <li><a class="sublink" href="pages/products.html">قهوه‌ساز</a></li>
+            <li><a class="sublink" href="pages/products.html">سرخ‌کن و لوازم آشپزی</a></li>
+          </ul>
+        </li>
+
+        <li class="item drop">
+          <a class="link" href="pages/brands.html">برندها</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="pages/brands.html">بوش</a></li>
+            <li><a class="sublink" href="pages/brands.html">سامسونگ</a></li>
+            <li><a class="sublink" href="pages/brands.html">اسمگ</a></li>
+            <li><a class="sublink" href="pages/brands.html">ال‌جی</a></li>
+            <li><a class="sublink" href="pages/brands.html">فیلیپس</a></li>
+            <li><a class="sublink" href="pages/brands.html">همه‌ی برندها</a></li>
+          </ul>
+        </li>
+
+        <li class="item"><a class="link" href="pages/offers.html">پیشنهادهای ویژه</a></li>
+        <li class="item"><a class="link" href="pages/magazine.html">مجله</a></li>
+        <li class="item"><a class="link" href="pages/contact.html">تماس با ما</a></li>
+      </ul>
+
+      <!-- لینک‌های سمت چپ -->
+      <div class="icons">
+        <a href="#">جستجو</a>
+        <a href="pages/login.html">ورود</a>
+        <a href="pages/signup.html">ثبت‌نام</a>
+        <a href="#">علاقه‌مندی</a>
+        <a href="pages/cart.html">سبد (۲)</a>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+  <main>
+
+    <!-- بنر اصلی -->
+    <section class="hero">
+      <div class="container">
+        <div class="heading">
+          <p class="tag">لوازم خانگی برقی</p>
+          <h1 class="title">خانه‌ای هوشمندتر،<br>زندگی راحت‌تر</h1>
+        </div>
+        <div class="intro">
+          <p class="text">لوازم خانگی برقی از برندهای بوش، سامسونگ، اسمگ و بیشتر، با ضمانت اصالت و ارسال سریع به سراسر کشور.</p>
+          <a class="ghost" href="pages/products.html">مشاهده محصولات</a>
+        </div>
+      </div>
+    </section>
+
+   <!-- دسته‌بندی‌ها -->
+<section class="categories">
+  <div class="container">
+    <h2 class="title">دسته‌بندی محصولات</h2>
+    <div class="list">
+
+      <a class="item" href="pages/products.html">
+        <div class="image"><img src="images/products/samsung-fridge.png" alt="یخچال و فریزر"></div>
+        <h3 class="name">یخچال و فریزر</h3>
+      </a>
+      <a class="item" href="pages/products.html">
+        <div class="image"><img src="images/products/washing-machine.png" alt="ماشین لباسشویی"></div>
+        <h3 class="name">ماشین لباسشویی</h3>
+      </a>
+      <a class="item" href="pages/products.html">
+        <div class="image"><img src="images/products/coffee.png" alt="قهوه‌ساز"></div>
+        <h3 class="name">قهوه‌ساز</h3>
+      </a>
+      <a class="item" href="pages/products.html">
+        <div class="image"><img src="images/products/bosch-vacuum.png" alt="جاروبرقی"></div>
+        <h3 class="name">جاروبرقی</h3>
+      </a>
+      <a class="item" href="pages/products.html">
+        <div class="image"><img src="images/products/product-1.png" alt="ظروف آشپزی"></div>
+        <h3 class="name">ظروف آشپزی</h3>
+      </a>
+      <a class="item" href="pages/products.html">
+        <div class="image"><img src="images/products/smeg-2.png" alt="لوازم برقی کوچک"></div>
+        <h3 class="name">لوازم برقی کوچک</h3>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+    <!-- نمایش یک محصول -->
+    <section class="showcase">
+      <div class="container">
+        <div class="head">
+          <h2 class="title">یک ماشین آشپزخانه، امکانات بی‌پایان</h2>
+          <p class="subtitle">از خمیر تا خامه، همه‌چیز در یک دستگاه</p>
+        </div>
+        <div class="body">
+          <!-- ستون راست -->
+          <div class="side">
+            <div class="item">
+              <div class="image"><img src="images/cream-1.png" alt="خامه زدن"></div>
+              <h3 class="name">خامه زدن</h3>
+              <p class="text">خامه تازه را کرکی و سبک می‌کند.</p>
+            </div>
+            <div class="item">
+              <div class="image"><img src="images/cream-3.png" alt="ورز دادن خمیر"></div>
+              <h3 class="name">ورز دادن خمیر</h3>
+              <p class="text">خمیر را یکنواخت و آماده پخت می‌کند.</p>
+            </div>
+          </div>
+          <!-- وسط -->
+          <div class="center">
+            <img src="images/products/kitchenAid.png" alt="ماشین آشپزخانه">
+          </div>
+          <!-- ستون چپ -->
+          <div class="side">
+            <div class="item">
+              <div class="image"><img src="images/egg.png" alt="هم زدن تخم‌مرغ"></div>
+              <h3 class="name">هم زدن تخم‌مرغ</h3>
+              <p class="text">تخم‌مرغ را سریع و یکدست می‌زند.</p>
+            </div>
+            <div class="item">
+              <div class="image"><img src="images/cream-2.png" alt="مخلوط کردن مواد کیک"></div>
+              <h3 class="name">مواد کیک</h3>
+              <p class="text">مواد کیک را نرم و یکنواخت مخلوط می‌کند.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- پرفروش‌ها -->
+    <section class="bestsellers">
+      <div class="container">
+        <h2 class="title">محصولات پرفروش</h2>
+        <div class="list">
+          <a class="card" href="pages/product.html">
+            <div class="image"><img src="images/products/washing-machine.png" alt="ماشین لباسشویی بوش"></div>
+            <h3 class="name">ماشین لباسشویی بوش ۹ کیلویی</h3>
+            <p class="price">۳۲,۵۰۰,۰۰۰ تومان</p>
+          </a>
+          <a class="card" href="pages/product.html">
+            <div class="image"><img src="images/products/samsung-fridge.png" alt="یخچال سامسونگ"></div>
+            <h3 class="name">یخچال فریزر سامسونگ ساید بای ساید</h3>
+            <p class="price">۷۸,۹۰۰,۰۰۰ تومان</p>
+        
+          </a>
+          <a class="card" href="pages/product.html">
+            <div class="image"><img src="images/products/smeg-kettel.jpg" alt="کتری برقی اسمگ"></div>
+            <h3 class="name">کتری برقی اسمگ</h3>
+            <p class="price">۹,۸۰۰,۰۰۰ تومان</p>
+          </a>
+          <a class="card" href="pages/product.html">
+            <div class="image"><img src="images/products/steillen-pot.png" alt="ست قابلمه استیل"></div>
+            <h3 class="name">ست قابلمه استیل ۶ تکه</h3>
+            <p class="price">۴,۲۰۰,۰۰۰ تومان</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- مزیت‌ها -->
+    <section class="perks">
+      <div class="container">
+        <div class="list">
+          <div class="item">
+            <h3 class="title">ارسال سریع</h3>
+            <p class="text">ارسال به سراسر کشور</p>
+          </div>
+          <div class="item">
+            <h3 class="title">ضمانت اصالت</h3>
+            <p class="text">کالای اورجینال و گارانتی‌دار</p>
+          </div>
+          <div class="item">
+            <h3 class="title">پشتیبانی</h3>
+            <p class="text">همه روزه پاسخگوی شما</p>
+          </div>
+          <div class="item">
+            <h3 class="title">بازگشت کالا</h3>
+            <p class="text">تا هفت روز فرصت دارید</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- فوتر -->
+
+  <footer class="footer">
+    <div class="container">
+        <span class="copy">© همه ی حقوق همالایف ، محفوظ است .</span>
+        <div class="links">
+            <a href="pages/contact.html">تماس با ما</a>
+            <a href="pages/magazine.html">مجله</a>
+            <a href="pages/brands.html">برندها</a>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>

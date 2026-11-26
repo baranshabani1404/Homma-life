@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  سبد خرید | لوازم خانگی</title>
+
+  <!-- فونت وزیرمتن -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- استایل‌ها -->
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<!-- هدر -->
+<header class="header">
+  <div class="container">
+
+    <!-- لوگو -->
+    <a class="logo" href="../index.html">
+      <img src="../images/logo-1.png" alt="هما لایف">
+    </a>
+
+    <!-- چک‌باکس نامرئی: وضعیت باز یا بسته بودن منو رو نگه می‌داره -->
+    <input class="toggle-input" type="checkbox" id="menu-toggle">
+
+    <!-- دکمه‌ی همبرگری: فقط توی تبلت و موبایل دیده می‌شه -->
+    <label class="toggle" for="menu-toggle" aria-label="باز و بسته کردن منو">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- پنل: منو و لینک‌ها -->
+    <div class="panel">
+
+      <!-- منوی اصلی -->
+      <ul class="menu">
+        <li class="item"><a class="link" href="../index.html">خانه</a></li>
+
+        <li class="item drop">
+          <a class="link" href="products.html">محصولات</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="products.html">جاروبرقی</a></li>
+            <li><a class="sublink" href="products.html">یخچال و فریزر</a></li>
+            <li><a class="sublink" href="products.html">ماشین لباسشویی</a></li>
+            <li><a class="sublink" href="products.html">ماشین ظرفشویی</a></li>
+            <li><a class="sublink" href="products.html">قهوه‌ساز</a></li>
+            <li><a class="sublink" href="products.html">سرخ‌کن و لوازم آشپزی</a></li>
+          </ul>
+        </li>
+
+        <li class="item drop">
+          <a class="link" href="brands.html">برندها</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="brands.html">بوش</a></li>
+            <li><a class="sublink" href="brands.html">سامسونگ</a></li>
+            <li><a class="sublink" href="brands.html">اسمگ</a></li>
+            <li><a class="sublink" href="brands.html">ال‌جی</a></li>
+            <li><a class="sublink" href="brands.html">فیلیپس</a></li>
+            <li><a class="sublink" href="brands.html">همه‌ی برندها</a></li>
+          </ul>
+        </li>
+
+        <li class="item"><a class="link" href="offers.html">پیشنهادهای ویژه</a></li>
+        <li class="item"><a class="link" href="magazine.html">مجله</a></li>
+        <li class="item"><a class="link" href="contact.html">تماس با ما</a></li>
+      </ul>
+
+      <!-- لینک‌های سمت چپ -->
+      <div class="icons">
+        <a href="#">جستجو</a>
+        <a href="login.html">ورود</a>
+        <a href="signup.html">ثبت‌نام</a>
+        <a href="#">علاقه‌مندی</a>
+        <a href="cart.html">سبد (۲)</a>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+<main>
+
+  <!-- مسیر صفحه -->
+  <section class="breadcrumb">
+    <div class="container">
+      <a href="../index.html">خانه</a>
+      <span>/</span>
+      <span>سبد خرید</span>
+    </div>
+  </section>
+
+  <!-- عنوان صفحه -->
+  <section class="page-title">
+    <div class="container">
+      <h1 class="title">سبد خرید</h1>
+      <p class="text">۲ کالا در سبد خرید شماست.</p>
+    </div>
+  </section>
+
+  <!-- کالاها و خلاصه‌ی سفارش -->
+  <section class="basket">
+    <div class="container">
+
+      <!-- ستون راست: کالاها -->
+      <div class="list">
+
+        <div class="item">
+          <div class="image"><img src="../images/products/p1.png" alt="ماشین لباسشویی بوش"></div>
+          <div class="info">
+            <p class="brand">بوش</p>
+            <h3 class="name">ماشین لباسشویی بوش ۹ کیلویی</h3>
+            <p class="price">۳۲,۵۰۰,۰۰۰ تومان</p>
+          </div>
+          <input class="input qty" type="number" value="1" min="1" aria-label="تعداد">
+          <div class="total">
+            <p class="sum">۳۲,۵۰۰,۰۰۰ تومان</p>
+            <a class="remove" href="#">حذف</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="image"><img src="../images/products/p3.png" alt="کتری برقی اسمگ"></div>
+          <div class="info">
+            <p class="brand">اسمگ</p>
+            <h3 class="name">کتری برقی اسمگ</h3>
+            <p class="price">۹,۸۰۰,۰۰۰ تومان</p>
+          </div>
+          <input class="input qty" type="number" value="2" min="1" aria-label="تعداد">
+          <div class="total">
+            <p class="sum">۱۹,۶۰۰,۰۰۰ تومان</p>
+            <a class="remove" href="#">حذف</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ستون چپ: خلاصه‌ی سفارش -->
+      <aside class="summary">
+        <h2 class="title">خلاصه‌ی سفارش</h2>
+
+        <div class="row">
+          <span class="key">جمع کالاها (۲ کالا)</span>
+          <span class="value">۵۲,۱۰۰,۰۰۰ تومان</span>
+        </div>
+        <div class="row">
+          <span class="key">تخفیف</span>
+          <span class="value">۳,۲۵۰,۰۰۰ تومان</span>
+        </div>
+        <div class="row">
+          <span class="key">هزینه ارسال</span>
+          <span class="value">رایگان</span>
+        </div>
+        <div class="row pay">
+          <span class="key">مبلغ قابل پرداخت</span>
+          <span class="value">۴۸,۸۵۰,۰۰۰ تومان</span>
+        </div>
+
+        <!-- کد تخفیف -->
+        <form class="code" action="#">
+          <input class="input" type="text" placeholder="کد تخفیف" aria-label="کد تخفیف">
+          <button class="button" type="submit">اعمال</button>
+        </form>
+
+        <button class="button checkout" type="button">ادامه و پرداخت</button>
+        <a class="continue" href="products.html">ادامه‌ی خرید</a>
+        <p class="note">پرداخت امن و مطمئن</p>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+    <!-- مزیت‌ها -->
+    <section class="perks">
+        <div class="container">
+          <div class="list">
+            <div class="item">
+              <h3 class="title">ارسال سریع</h3>
+              <p class="text">ارسال به سراسر کشور</p>
+            </div>
+            <div class="item">
+              <h3 class="title">ضمانت اصالت</h3>
+              <p class="text">کالای اورجینال و گارانتی‌دار</p>
+            </div>
+            <div class="item">
+              <h3 class="title">پشتیبانی</h3>
+              <p class="text">همه روزه پاسخگوی شما</p>
+            </div>
+            <div class="item">
+              <h3 class="title">بازگشت کالا</h3>
+              <p class="text">تا هفت روز فرصت دارید</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    </main>
+    <!-- فوتر -->
+  
+    <footer class="footer">
+      <div class="container">
+          <span class="copy">© همه ی حقوق همالایف ، محفوظ است .</span>
+          <div class="links">
+              <a href="pages/contact.html">تماس با ما</a>
+              <a href="pages/magazine.html">مجله</a>
+              <a href="pages/brands.html">برندها</a>
+          </div>
+      </div>
+    </footer>
+
+</body>
+
+</html>

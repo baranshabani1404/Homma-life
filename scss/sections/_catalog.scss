@@ -1,0 +1,268 @@
+@use "../base/variables" as *;
+
+// فیلتر و لیست محصولات
+.catalog {
+  padding-bottom: $space-5;
+
+  .container {
+    display: grid;
+    grid-template-columns: 260px 1fr;      // راست: فیلتر، چپ: محصولات
+    gap: $space-4;
+    align-items: start;                    // ستون‌ها هم‌قد نشن
+  }
+
+  // چک‌باکس نامرئی فیلتر (برای تبلت و موبایل)
+  .filter-input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  // ---------- فیلتر ----------
+
+  .filters {
+    padding: $space-3;
+    background: $color-tile;               // خاکستری گرم، مثل کارت‌های دیگه
+    border-radius: 16px;
+  }
+
+  .group {
+    margin-bottom: $space-3;
+  }
+
+  .group .title {
+    margin-bottom: $space-2;
+    font-size: $font-normal;
+    font-weight: bold;
+  }
+
+  .group .check {
+    margin-bottom: $space-1;
+  }
+
+  // قیمت: دو کادر کنار هم
+  .range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-1;
+  }
+
+  // کادرهای داخل فیلتر سفیدن، تا روی خاکستری دیده بشن
+  .filters .input {
+    background: #ffffff;
+  }
+
+  .filters .button {
+    width: 100%;
+  }
+
+  // ---------- نوار بالای محصولات ----------
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-2;
+    margin-bottom: $space-3;
+  }
+
+  .count {
+    font-size: $font-small;
+    color: $color-muted;
+  }
+
+  .sort {
+    width: 200px;
+  }
+
+  // دکمه‌ی فیلتر: توی دسکتاپ مخفیه
+  .filter-button {
+    display: none;
+    align-items: center;
+    height: 48px;
+    padding: 0 $space-3;
+    background: $color-tile;
+    border-radius: 24px;
+    font-size: $font-small;
+    cursor: pointer;
+  }
+
+  // ---------- محصولات ----------
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // سه ستون
+    gap: $space-2;
+  }
+
+  // هر کارت
+  .card {
+    position: relative;                    // برچسب نسبت به کارت جا می‌گیره
+    display: grid;
+    gap: $space-1;
+    transition: transform 0.3s;
+  }
+
+  // با رفتن موس: کارت ۶ پیکسل بالا می‌آد
+  .card:hover {
+    transform: translateY(-6px);
+  }
+
+  .image {
+    height: 240px;
+    padding: $space-2;
+    background: $color-tile;
+    overflow: hidden;                      // عکس بزرگ‌شده از کادر بیرون نزنه
+    transition: box-shadow 0.3s;
+  }
+
+  .card:hover .image {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s;
+  }
+
+  .card:hover .image img {
+    transform: scale(1.06);
+  }
+
+  // برچسب تخفیف: گوشه‌ی بالا و راست
+  .badge {
+    position: absolute;
+    top: $space-1;
+    right: $space-1;
+    padding: 2px $space-1;
+    background: $color-text;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  .brand {
+    font-size: 13px;
+    color: $color-muted;
+  }
+
+  .name {
+    font-size: $font-normal;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .card:hover .name {
+    color: $color-accent;
+  }
+
+  .price {
+    font-size: $font-small;
+    color: $color-accent;
+  }
+
+  // ---------- صفحه‌بندی ----------
+
+  .pager {
+    display: flex;
+    justify-content: center;
+    gap: $space-1;
+    margin-top: $space-4;
+  }
+
+  .pager .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: $color-tile;
+    border-radius: 50%;                    // دایره
+    font-size: $font-small;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .pager .link:hover {
+    background: $color-accent;
+    color: #ffffff;
+  }
+
+  // صفحه‌ی فعلی: مشکی تیره
+  .pager .current {
+    background: $color-text;
+    color: #ffffff;
+  }
+
+  // ---------- ریسپانسیو ----------
+
+  // تبلت: فیلتر پشت دکمه
+  @media (max-width: $bp-tablet) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .filter-button {
+      display: flex;
+    }
+
+    // فیلتر اول مخفیه
+    .filters {
+      display: none;
+      margin-bottom: $space-3;
+    }
+
+    // با تیک خوردن چک‌باکس، فیلتر بالای محصولات باز می‌شه
+    .filter-input:checked ~ .filters {
+      display: block;
+    }
+
+    // با کیبورد روی دکمه می‌ریم: قاب سبز
+    .filter-input:focus-visible ~ .content .filter-button {
+        outline: 2px solid $color-accent;
+      }
+    }
+  
+    // موبایل: دو ستون محصول
+    @media (max-width: $bp-mobile) {
+      .list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+  
+      .toolbar {
+        flex-wrap: wrap;
+      }
+  
+      .sort {
+        width: 160px;
+      }
+    }
+  
+    // کوچک: عکس‌ها و نوشته‌ها کوچک‌تر
+    @media (max-width: $bp-small) {
+      .image {
+        height: 150px;
+        padding: $space-1;
+      }
+  
+      .name {
+        font-size: $font-small;
+      }
+  
+      .price {
+        font-size: 13px;
+      }
+  
+      .count {
+        display: none;
+      }
+  
+      .sort {
+        width: auto;
+        flex: 1;
+      }
+    }
+  }

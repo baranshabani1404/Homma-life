@@ -1,0 +1,46 @@
+// متغیرها رو وصل می‌کنیم
+@use "../base/variables" as *;
+
+// فوتر
+.footer {
+  margin-top: $space-5;                  // ۴۸ پیکسل فاصله از بخش بالا
+  padding: $space-4 0;                   // ۳۲ پیکسل بالا و پایین
+  border-top: 1px solid $color-line;     // خط نازک بالای فوتر
+
+  .container {
+    display: flex;                       // حق نشر و لینک‌ها کنار هم
+    justify-content: space-between;      // یکی راست، یکی چپ
+    align-items: center;
+    flex-wrap: wrap;                     // اگه جا نبود، به خط بعد می‌ره
+    gap: $space-2;                       // ۱۶ پیکسل فاصله
+  }
+
+  .copy {
+    font-size: 13px;
+    color: $color-muted;
+  }
+
+  .links {
+    display: flex;
+    gap: $space-3;                       // ۲۴ پیکسل فاصله
+
+    a {
+      font-size: 13px;
+      color: $color-muted;
+    }
+
+    a:hover {
+      color: $color-hover;                // با رفتن موس، طلایی می‌شه
+    }
+  }
+
+  // ---------- ریسپانسیو ----------
+
+  // موبایل: همه‌چیز زیر هم و وسط‌چین
+  @media (max-width: $bp-mobile) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@use "../base/variables" as *;
+
+// نمایش یک محصول با چهار ویژگی
+.showcase {
+  padding: $space-5 0;
+
+  // عنوان وسط‌چین
+  .head {
+    margin-bottom: $space-5;
+    text-align: center;
+  }
+
+  .title {
+    font-size: $font-title;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    margin-top: $space-1;
+    font-size: $font-small;
+    color: $color-muted;
+  }
+
+  // سه ستون: راست، وسط، چپ
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    align-items: center;
+    gap: $space-4;
+  }
+
+  // ستون کناری
+  .side {
+    display: grid;
+    gap: $space-5;
+  }
+
+  // هر ویژگی
+  .item {
+    display: grid;
+    justify-items: center;                 // همه چیز وسط
+    gap: $space-1;
+    text-align: center;
+  }
+
+  .item .image {
+    width: 64px;
+    height: 64px;
+  }
+
+  .item .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;                    // عکس گرد
+    object-fit: cover;
+  }
+
+  .item .name {
+    font-size: $font-normal;
+    font-weight: 500;
+  }
+
+  .item .text {
+    font-size: 13px;
+    color: $color-muted;
+  }
+
+  // عکس وسط
+  .center img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+  }
+
+  @media (max-width: $bp-mobile) {
+    .body {
+      grid-template-columns: 1fr;
+    }
+
+    // عکس وسط بیاد بالا
+    .center {
+      order: -1;
+    }
+  }
+}

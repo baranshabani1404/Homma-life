@@ -1,0 +1,37 @@
+// رنگ‌ها
+$color-bg: #ffffff;               // پس‌زمینه‌ی سفید
+$color-tile: #f1f0ec;             // خاکستری گرم کاشی‌ها
+$color-text: #1f2421;             // نوشته‌های اصلی
+$color-muted: #6b6b6b;            // نوشته‌های کم‌رنگ
+$color-line: #eeeeee;             // خط‌های باریک
+$color-accent: #4f6f5a;           // سبز هما، فقط برای چند جای کوچیک
+$color-hover:#3f5c49;
+$color-page:#faf7f0;
+$color-succes-bg:#e3ede6;
+$color-succes:#3f5c49;
+$color-warning-bg:#f7edd9;
+$color-danger-bg:#f6dedb;
+$color-danger:#9c2f27;
+// فونت
+$font-main: "Vazirmatn", Tahoma, sans-serif;
+
+// اندازه نوشته‌ها
+$font-small: 14px;
+$font-normal: 16px;
+$font-title: 24px;
+$font-big: 36px;
+
+// فاصله‌ها
+$space-1: 8px;
+$space-2: 16px;
+$space-3: 24px;
+$space-4: 32px;
+$space-5: 48px;
+
+// عرض ثابت کل قالب
+$width-site: 1200px;
+
+// اندازه‌های تغییر چیدمان
+$bp-tablet: 1024px;
+$bp-mobile: 768px;
+$bp-small: 480px;

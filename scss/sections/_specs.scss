@@ -1,0 +1,61 @@
+@use "../base/variables" as *;
+
+// توضیحات و مشخصات
+.specs {
+  padding-bottom: $space-5;
+
+  .title {
+    margin-bottom: $space-3;
+    font-size: $font-title;
+    font-weight: 500;
+  }
+
+  .text {
+    max-width: 800px;                      // خط‌های خیلی بلند نشن
+    margin-bottom: $space-4;
+    line-height: 2;
+    color: $color-muted;
+  }
+
+  // جدول: کارت خاکستری گرم
+  .table {
+    padding: $space-1 $space-3;
+    background: $color-tile;
+    border-radius: 16px;
+  }
+
+  // هر ردیف: اسم مشخصه و مقدارش
+  .row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: $space-2;
+    padding: $space-2 0;
+    border-bottom: 1px solid #ffffff;      // خط سفید بین ردیف‌ها
+  }
+
+  .row:last-child {
+    border-bottom: 0;                      // ردیف آخر خط نداره
+  }
+
+  .key {
+    font-size: $font-small;
+    color: $color-muted;
+  }
+
+  .value {
+    font-size: $font-normal;
+  }
+
+  @media (max-width: $bp-mobile) {
+    .row {
+      grid-template-columns: 140px 1fr;
+    }
+  }
+
+  @media (max-width: $bp-small) {
+    .row {
+      grid-template-columns: 1fr;          // اسم و مقدار زیر هم
+      gap: 4px;
+    }
+  }
+}

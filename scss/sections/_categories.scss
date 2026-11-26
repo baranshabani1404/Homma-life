@@ -1,0 +1,101 @@
+@use "../base/variables" as *;
+
+// دسته‌بندی‌های گرد
+.categories {
+  padding: $space-5 0 $space-3;
+
+  // عنوان وسط‌چین
+  .title {
+    margin-bottom: $space-4;
+    font-size: $font-title;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  // شش دسته کنار هم
+  .list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: $space-3;
+  }
+
+  // هر دسته
+  .item {
+    display: grid;
+    justify-items: center;                 // دایره و اسم وسط
+    align-content: start;
+    gap: $space-2;
+    text-align: center;
+  }
+
+  // دایره
+  .image {
+    width: 140px;
+    height: 140px;
+    padding: $space-3;                     // فاصله بین عکس و لبه دایره
+    border: 2px solid transparent;         // حلقه‌ی نامرئی، با هاور سبز می‌شه
+    border-radius: 50%;                    // گرد
+    background: $color-tile;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;                   // عکس کامل توی دایره بمونه
+  }
+
+  // با رفتن موس: دایره بالا می‌آد، حلقه سبز و سایه می‌گیره
+  .item:hover .image {
+    transform: translateY(-6px);
+    border-color: $color-accent;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .name {
+    font-size: $font-normal;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .item:hover .name {
+    color: $color-accent;
+  }
+
+  // ---------- ریسپانسیو ----------
+
+  // تبلت: سه ستون، دو ردیف
+  @media (max-width: $bp-tablet) {
+    .list {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: $space-4;
+    }
+  }
+
+  // موبایل: دایره و عنوان کوچک‌تر
+  @media (max-width: $bp-mobile) {
+    .title {
+      margin-bottom: $space-3;
+      font-size: 20px;
+    }
+
+    .image {
+      width: 110px;
+      height: 110px;
+      padding: 18px;
+    }
+  }
+
+  // کوچک: دایره‌ی کوچک‌تر و اسم ریزتر
+  @media (max-width: $bp-small) {
+    .image {
+      width: 88px;
+      height: 88px;
+      padding: 14px;
+    }
+
+    .name {
+      font-size: 13px;
+    }
+  }
+}

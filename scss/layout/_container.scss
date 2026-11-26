@@ -1,0 +1,15 @@
+@use "../base/variables" as *;
+
+@use "../base/variables" as *;
+
+.container {
+  width: $width-site;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: $bp-tablet) {
+  .container {
+    padding: 0 $space-2;
+  }
+}

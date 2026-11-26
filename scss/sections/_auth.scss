@@ -1,0 +1,142 @@
+@use "../base/variables" as *;
+
+// صفحه‌های ورود و ثبت‌نام
+.auth {
+  padding: $space-5 0;                     // ۴۸ پیکسل بالا و پایین
+
+  // جعبه‌ی ۱۲۰۰ پیکسلی، دو نیمه
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;        // دو نیمه‌ی برابر
+    gap: $space-3;
+    min-height: 640px;
+  }
+
+  // ---------- نیمه‌ی فرم ----------
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;               // فرم وسط نیمه (عمودی)
+    align-items: center;                   // فرم وسط نیمه (افقی)
+    padding: $space-4 $space-3;
+  }
+
+  // جعبه‌ی داخلی: عرض فرم رو محدود می‌کنه
+  .inner {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .box .title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .box .text {
+    margin: $space-1 0 $space-4;           // ۸ بالا، ۳۲ پایین
+    color: $color-muted;
+  }
+
+  // فرم: فیلدها زیر هم
+  .form {
+    display: grid;
+    gap: $space-2;
+  }
+
+  // نام و نام خانوادگی: دو ستون
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-2;
+  }
+
+  // لینک پایین فرم
+  .switch {
+    margin-top: $space-3;
+    font-size: $font-small;
+    text-align: center;
+    color: $color-muted;
+  }
+
+  .switch a {
+    font-weight: bold;
+    color: $color-accent;
+  }
+
+  .switch a:hover {
+    color: $color-hover;
+  }
+
+  // ---------- نیمه‌ی عکس ----------
+
+  .photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;             // نوشته‌ها پایین
+    gap: $space-1;
+    padding: $space-4;                     // ۳۲ پیکسل از چهار طرف
+    border-radius: 16px;                   // گوشه‌های گرد
+    color: #ffffff;                        // نوشته‌ی سفید روی عکس
+    background-color: #ece9e2;             // رنگ نزدیک به عکس
+    // لایه‌ی تیره فقط پایین عکس، تا نوشته‌ها خونده بشن
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%),
+      url("../images/banners/banner-login.png");   // مسیر درست خودت رو بنویس
+    background-size: cover;
+    background-position: left center;      // سمت چپ عکس می‌مونه
+  }
+
+  .photo .tag {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .photo .title {
+    font-size: $font-big;                  // ۳۶ پیکسل
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .photo .text {
+    max-width: 320px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  // ---------- ریسپانسیو ----------
+
+  // تبلت: عکس کوچیک‌تر، نوشته‌ها هم کوچیک‌تر
+  @media (max-width: $bp-tablet) {
+    .photo {
+      padding: $space-3;
+    }
+
+    .photo .title {
+      font-size: 28px;
+    }
+  }
+
+  // موبایل: فقط فرم، عکس مخفی
+  @media (max-width: $bp-mobile) {
+    .container {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .photo {
+      display: none;
+    }
+
+    .box {
+      padding: $space-2 0;
+    }
+  }
+
+  // کوچک: نام و نام خانوادگی زیر هم
+  @media (max-width: $bp-small) {
+    .row {
+      grid-template-columns: 1fr;
+    }
+  }
+}

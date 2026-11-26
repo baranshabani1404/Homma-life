@@ -1,0 +1,317 @@
+@use "../base/variables" as *;
+
+// پیشنهادهای ویژه
+.offers {
+  padding-bottom: $space-5;
+
+  // عنوان هر قسمت
+  .head {
+    margin-bottom: $space-3;
+    font-size: $font-title;
+    font-weight: 500;
+  }
+
+  // ---------- قسمت ۱: پیشنهاد امروز ----------
+
+  .deal {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;      // راست: نوشته‌ها، چپ: عکس
+    gap: $space-4;
+    align-items: center;
+    margin-bottom: $space-5;
+    padding: $space-5;
+    background: $color-tile;               // خاکستری گرم
+    border-radius: 16px;
+  }
+
+  // برچسب «پیشنهاد شگفت‌انگیز»
+  .deal .tag {
+    display: inline-block;
+    margin-bottom: $space-2;
+    padding: 4px $space-2;
+    background: $color-text;
+    border-radius: 16px;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  .deal .title {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  .deal .text {
+    margin: $space-2 0;
+    line-height: 1.9;
+    color: $color-muted;
+  }
+
+  // قیمت، قیمت قبلی و برچسب تخفیف
+  .prices {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+  }
+
+  .deal .price {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .old {
+    font-size: $font-small;
+    color: $color-muted;
+    text-decoration: line-through;         // خط روی قیمت قبلی
+  }
+
+  .badge {
+    padding: 2px $space-1;
+    background: $color-text;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  // زمان‌سنج: سه جعبه‌ی سفید
+  .timer {
+    display: flex;
+    gap: $space-1;
+    margin: $space-3 0;
+  }
+
+  .unit {
+    min-width: 64px;
+    padding: $space-1;
+    background: #ffffff;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .num {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .word {
+    display: block;
+    font-size: 12px;
+    color: $color-muted;
+  }
+
+  // دکمه‌ی «مشاهده و خرید»: لینک، ولی با ظاهر دکمه
+  .deal .more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $space-5;
+  }
+
+  .deal .image {
+    height: 320px;
+  }
+
+  .deal .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  // ---------- قسمت ۲: کدهای تخفیف ----------
+
+  .coupons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-2;
+    margin-bottom: $space-5;
+  }
+
+  // هر کد: کادر خط‌چین
+  .coupon {
+    padding: $space-3;
+    border: 1px dashed $color-muted;
+    border-radius: 16px;
+  }
+
+  .coupon .value {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .coupon .desc {
+    margin: $space-1 0 $space-2;
+    font-size: $font-small;
+    color: $color-muted;
+  }
+
+  .coupon .code {
+    display: inline-block;
+    padding: 6px $space-2;
+    background: $color-tile;
+    border-radius: 12px;
+    font-size: $font-small;
+    letter-spacing: 2px;                   // فاصله‌ی بین حرف‌های کد
+  }
+
+  // ---------- قسمت ۳: همه‌ی پیشنهادها ----------
+
+  // زبانه‌های دسته‌بندی
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-1;
+    margin-bottom: $space-3;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 $space-3;
+    background: $color-tile;
+    border-radius: 20px;
+    font-size: $font-small;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .tab:hover {
+    background: $color-accent;
+    color: #ffffff;
+  }
+
+  // زبانه‌ی فعلی: مشکی تیره
+  .current {
+    background: $color-text;
+    color: #ffffff;
+  }
+
+  // چهار کارت کنار هم
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-2;
+  }
+
+  .card {
+    position: relative;                    // برچسب نسبت به کارت جا می‌گیره
+    display: grid;
+    gap: $space-1;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+  }
+
+  .card .image {
+    height: 240px;
+    padding: $space-2;
+    background: $color-tile;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+
+  .card:hover .image {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s;
+  }
+
+  .card:hover .image img {
+    transform: scale(1.06);
+}
+
+// برچسب تخفیف: گوشه‌ی بالا و راست عکس
+.card .badge {
+  position: absolute;
+  top: $space-1;
+  right: $space-1;
+}
+
+.card .prices {
+  gap: $space-1;
+}
+
+.brand {
+  font-size: 13px;
+  color: $color-muted;
+}
+
+.card .name {
+  font-size: $font-normal;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.card:hover .name {
+  color: $color-accent;
+}
+
+.card .price {
+  font-size: $font-small;
+  color: $color-accent;
+}
+
+// ---------- ریسپانسیو ----------
+
+// تبلت: فاصله‌ی داخلی کمتر، محصولات سه ستون
+@media (max-width: $bp-tablet) {
+  .deal {
+    padding: $space-4;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// موبایل: پیشنهاد امروز یک ستون، عکس بالا
+@media (max-width: $bp-mobile) {
+  .deal {
+    grid-template-columns: 1fr;
+  }
+
+  .deal .image {
+    order: -1;                           // عکس بیاد بالای نوشته‌ها
+    height: 240px;
+  }
+
+  .coupons {
+    grid-template-columns: 1fr;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// کوچک: عکس‌ها و نوشته‌ها کوچک‌تر
+@media (max-width: $bp-small) {
+  .deal {
+    padding: $space-3 $space-2;
+  }
+
+  .deal .title {
+    font-size: 24px;
+  }
+
+  .unit {
+    min-width: 56px;
+  }
+
+  .card .image {
+    height: 150px;
+    padding: $space-1;
+  }
+
+  .card .name {
+    font-size: $font-small;
+  }
+}
+}

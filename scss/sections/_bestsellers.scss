@@ -1,0 +1,103 @@
+@use "../base/variables" as *;
+
+// پرفروش‌ها
+.bestsellers {
+  padding: $space-5 0;
+
+  .title {
+    margin-bottom: $space-4;
+    font-size: $font-title;
+    font-weight: 500;
+  }
+
+  // چهار کارت کنار هم
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-2;
+  }
+
+  // هر کارت
+  .card {
+    display: grid;
+    gap: $space-1;
+    border-radius: 10px;
+   overflow: hidden;
+    transition: transform 0.3s;            // حرکت نرم
+  }
+
+  // با رفتن موس: کارت ۶ پیکسل بالا می‌آد
+  .card:hover {
+    transform: translateY(-6px);
+  }
+
+  // جای عکس
+  .image {
+    height: 260px;
+    padding: $space-2;
+    background: $color-tile;
+    overflow: hidden;                      // عکس بزرگ‌شده از کادر بیرون نزنه
+    transition: box-shadow 0.3s;
+  }
+
+  // با رفتن موس: سایه‌ی نرم زیر کادر عکس
+  .card:hover .image {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s;
+  }
+
+  // با رفتن موس: عکس کمی بزرگ می‌شه
+  .card:hover .image img {
+    transform: scale(1.06);
+  }
+
+  .name {
+    font-size: $font-normal;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  // با رفتن موس: اسم محصول سبز می‌شه
+  .card:hover .name {
+    color: $color-accent;
+  }
+
+  .price {
+    font-size: $font-small;
+    color: $color-accent;
+  }
+
+  // ---------- ریسپانسیو ----------
+
+  // تبلت: دو ستون
+  @media (max-width: $bp-tablet) {
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // موبایل: عنوان و عکس کوچک‌تر
+  @media (max-width: $bp-mobile) {
+    .title {
+      margin-bottom: $space-3;
+      font-size: 20px;
+    }
+
+    .image {
+      height: 220px;
+    }
+  }
+
+  // کوچک: یک ستون
+  @media (max-width: $bp-small) {
+    .list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

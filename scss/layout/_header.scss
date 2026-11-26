@@ -1,0 +1,252 @@
+@use "../base/variables" as *;
+
+// هدر
+.header {
+  position: relative;
+  z-index: 10;                             // منو و زیرمنو روی بنر دیده بشن
+  background: $color-bg;
+  border-bottom: 1px solid $color-line;
+
+  .container {
+    display: grid;
+    // دو ستون کناری برابر، منو وسط
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    height: 80px;
+  }
+
+  // لوگو: سمت راست
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 48px;
+    width: auto;                           // عکس کش نیاد
+    max-width: none;                       // عکس باریک نشه
+  }
+
+  // چک‌باکس نامرئی (همیشه نامرئیه، ولی با کیبورد قابل دسترسیه)
+  .toggle-input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  // دکمه‌ی همبرگری: توی دسکتاپ مخفیه
+  .toggle {
+    display: none;
+  }
+
+  // پنل: توی دسکتاپ فقط یه پوشه‌ی نامرئیه و منو و لینک‌ها
+  // مستقیم توی ستون‌های هدر قرار می‌گیرن
+  .panel {
+    display: contents;
+  }
+
+  // منوی اصلی: وسط هدر
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: $space-3;                         // ۲۴ پیکسل بین لینک‌ها
+    font-size: $font-small;
+  }
+
+  // هر گزینه‌ی منو
+  .item {
+    position: relative;                    // زیرمنو نسبت به این جا می‌گیره
+  }
+
+  .link {
+    display: block;
+    padding: 29px 0;                       // تا ارتفاع کل هدر رو بگیره
+    white-space: nowrap;                   // اسم‌ها شکسته نشن
+    transition: color 0.2s;
+  }
+
+  .link:hover {
+    color: $color-accent;
+  }
+
+  // فلش کوچیک کنار گزینه‌های دارای زیرمنو
+  .drop .link::after {
+    content: "▾";
+    margin-right: 6px;
+    font-size: 10px;
+  }
+
+  // زیرمنو
+  .submenu {
+    position: absolute;
+    top: 100%;                             // درست زیر هدر
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // دو ستون
+    min-width: 340px;
+    padding: $space-1;
+    background: #ffffff;
+    border: 1px solid $color-line;
+    border-right: 2px solid $color-accent; // خط سبز باریک سمت راست
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    // اول مخفیه
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+
+  // با رفتن موس، زیرمنو نمایان می‌شه
+  .drop:hover .submenu,
+  .drop:focus-within .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  // هر گزینه‌ی زیرمنو
+  .sublink {
+    display: block;
+    padding: 10px $space-2;
+    border-radius: 4px;
+    transition: padding 0.2s, color 0.2s, background 0.2s;
+  }
+
+  // با رفتن موس: متن کمی جابه‌جا می‌شه و رنگ می‌گیره
+  .sublink:hover {
+    padding-right: $space-3;               // متن ۸ پیکسل به سمت چپ می‌ره
+    color: $color-accent;
+    background: $color-tile;
+  }
+
+  // لینک‌ها: سمت چپ
+  .icons {
+    display: flex;
+    justify-self: end;                     // می‌چسبه به لبه چپ
+    gap: $space-2;
+    font-size: $font-small;
+  }
+
+  .icons a:hover {
+    color: $color-accent;
+  }
+
+  // ---------- ریسپانسیو: منوی همبرگری ----------
+
+  // تبلت و موبایل
+  @media (max-width: $bp-tablet) {
+
+    // هدر: لوگو راست، دکمه چپ
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    // دکمه‌ی همبرگری: سه خط زیر هم
+    .toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    // وقتی با کیبورد روی دکمه می‌ریم، یه قاب سبز دورش می‌افته
+    .toggle-input:focus-visible + .toggle {
+      outline: 2px solid $color-accent;
+    }
+
+    // هر خط
+    .toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $color-text;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    // وقتی منو بازه (چک‌باکس تیک خورده): خط اول و سوم ضربدر می‌شن
+    .toggle-input:checked + .toggle span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    // خط وسط ناپدید می‌شه
+    .toggle-input:checked + .toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .toggle-input:checked + .toggle span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    // پنل: زیر هدر، تمام عرض. اول مخفیه
+    .panel {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      padding: $space-1 $space-2 $space-3;
+      background: $color-bg;
+      border-bottom: 1px solid $color-line;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+    }
+
+    // وقتی چک‌باکس تیک خورده: پنل نمایان می‌شه
+    .toggle-input:checked ~ .panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    // منو: لینک‌ها زیر هم
+    .menu {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      font-size: $font-normal;
+    }
+
+    .link {
+      padding: 14px 0;
+      border-bottom: 1px solid $color-line; // خط بین گزینه‌ها
+    }
+
+    // زیرمنوی هاوری توی لمسی کار نمی‌کنه، پس فعلاً نیست
+    .submenu {
+      display: none;
+    }
+
+    .drop .link::after {
+      display: none;                       // فلش هم لازم نیست
+    }
+
+    // لینک‌های ورود، ثبت‌نام و ...: زیر منو
+    .icons {
+      flex-wrap: wrap;
+      gap: $space-2;
+      padding-top: $space-2;
+    }
+  }
+
+  // کوچک: لوگو کمی کوچیک‌تر
+  @media (max-width: $bp-small) {
+    .logo img {
+      height: 36px;
+    }
+  }
+}

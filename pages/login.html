@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ورود | لوازم خانگی</title>
+
+  <!-- فونت وزیرمتن -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- استایل‌ها -->
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+ <!-- هدر -->
+<header class="header">
+  <div class="container">
+
+    <!-- لوگو -->
+    <a class="logo" href="../index.html">
+      <img src="../images/logo-1.png" alt="هما لایف">
+    </a>
+
+    <!-- چک‌باکس نامرئی: وضعیت باز یا بسته بودن منو رو نگه می‌داره -->
+    <input class="toggle-input" type="checkbox" id="menu-toggle">
+
+    <!-- دکمه‌ی همبرگری: فقط توی تبلت و موبایل دیده می‌شه -->
+    <label class="toggle" for="menu-toggle" aria-label="باز و بسته کردن منو">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- پنل: منو و لینک‌ها -->
+    <div class="panel">
+
+      <!-- منوی اصلی -->
+      <ul class="menu">
+        <li class="item"><a class="link" href="../index.html">خانه</a></li>
+
+        <li class="item drop">
+          <a class="link" href="products.html">محصولات</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="products.html">جاروبرقی</a></li>
+            <li><a class="sublink" href="products.html">یخچال و فریزر</a></li>
+            <li><a class="sublink" href="products.html">ماشین لباسشویی</a></li>
+            <li><a class="sublink" href="products.html">ماشین ظرفشویی</a></li>
+            <li><a class="sublink" href="products.html">قهوه‌ساز</a></li>
+            <li><a class="sublink" href="products.html">سرخ‌کن و لوازم آشپزی</a></li>
+          </ul>
+        </li>
+
+        <li class="item drop">
+          <a class="link" href="brands.html">برندها</a>
+          <ul class="submenu">
+            <li><a class="sublink" href="brands.html">بوش</a></li>
+            <li><a class="sublink" href="brands.html">سامسونگ</a></li>
+            <li><a class="sublink" href="brands.html">اسمگ</a></li>
+            <li><a class="sublink" href="brands.html">ال‌جی</a></li>
+            <li><a class="sublink" href="brands.html">فیلیپس</a></li>
+            <li><a class="sublink" href="brands.html">همه‌ی برندها</a></li>
+          </ul>
+        </li>
+
+        <li class="item"><a class="link" href="offers.html">پیشنهادهای ویژه</a></li>
+        <li class="item"><a class="link" href="magazine.html">مجله</a></li>
+        <li class="item"><a class="link" href="contact.html">تماس با ما</a></li>
+      </ul>
+
+      <!-- لینک‌های سمت چپ -->
+      <div class="icons">
+        <a href="#">جستجو</a>
+        <a href="login.html">ورود</a>
+        <a href="signup.html">ثبت‌نام</a>
+        <a href="#">علاقه‌مندی</a>
+        <a href="cart.html">سبد (۲)</a>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+    <main>
+
+       
+        <section class="auth">
+          <div class="container">
+    
+            <!-- نیمه‌ی راست: فرم ورود -->
+            <div class="box">
+              <div class="inner">
+                <h1 class="title">ورود</h1>
+                <p class="text">به حساب خودت وارد شو.</p>
+    
+                <form class="form" action="#">
+    
+                  <div class="field">
+                    <label class="label" for="user">شماره‌ی موبایل یا ایمیل</label>
+                    <input class="input" id="user" type="text" placeholder="۰۹۱۲۳۴۵۶۷۸۹">
+                  </div>
+                  <div class="field">
+                    <label class="label" for="pass">رمز عبور</label>
+                    <input class="input" id="pass" type="password" placeholder="رمز عبورت رو بنویس">
+                  </div>
+    
+                  <label class="check">
+                    <input type="checkbox">
+                    <span>مرا به خاطر بسپار</span>
+                  </label>
+    
+                  <button class="button" type="submit">ورود</button>
+                </form>
+    
+                <p class="switch">حساب نداری؟ <a href="signup.html">ثبت‌ نام</a></p>
+              </div>
+            </div>
+    
+            <!-- نیمه‌ی چپ: عکس و نوشته -->
+            <div class="photo">
+              <p class="tag">لوازم خانگی برقی</p>
+              <h2 class="title">خانه‌ای هوشمندتر،<br>زندگی راحت‌تر</h2>
+              <p class="text">لوازم خانگی برقی از برندهای بوش، سامسونگ، اسمگ و بیشتر، با ضمانت اصالت و ارسال سریع.</p>
+            </div>
+    
+          </div>
+        </section>
+      </main>
+    
+  <!-- فوتر -->
+
+  <footer class="footer">
+    <div class="container">
+        <span class="copy">© همه ی حقوق همالایف ، محفوظ است .</span>
+        <div class="links">
+            <a href="pages/contact.html">تماس با ما</a>
+            <a href="pages/magazine.html">مجله</a>
+            <a href="pages/brands.html">برندها</a>
+        </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
